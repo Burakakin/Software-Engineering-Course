@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8546013222596980019B11F /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8546012222596980019B11F /* SignupVC.swift */; };
+		A8546015222596B40019B11F /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8546014222596B40019B11F /* SigninVC.swift */; };
 		A8FD8E0C2224901C00C7F62C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FD8E0B2224901C00C7F62C /* AppDelegate.swift */; };
 		A8FD8E112224901C00C7F62C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FD8E0F2224901C00C7F62C /* Main.storyboard */; };
 		A8FD8E132224901E00C7F62C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8FD8E122224901E00C7F62C /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A8546012222596980019B11F /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		A8546014222596B40019B11F /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		A8FD8E082224901C00C7F62C /* SoftwareEngineeringTwitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoftwareEngineeringTwitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8FD8E0B2224901C00C7F62C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8FD8E102224901C00C7F62C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				A8FD8E3022249B0900C7F62C /* HomeFeedVC.swift */,
 				A8FD8E3222249B1C00C7F62C /* SearchVC.swift */,
 				A8FD8E3422249B2D00C7F62C /* ProfileVC.swift */,
+				A8546014222596B40019B11F /* SigninVC.swift */,
+				A8546012222596980019B11F /* SignupVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -230,10 +236,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8546013222596980019B11F /* SignupVC.swift in Sources */,
 				A8FD8E3522249B2D00C7F62C /* ProfileVC.swift in Sources */,
 				A8FD8E3322249B1C00C7F62C /* SearchVC.swift in Sources */,
 				A8FD8E3122249B0900C7F62C /* HomeFeedVC.swift in Sources */,
 				A8FD8E0C2224901C00C7F62C /* AppDelegate.swift in Sources */,
+				A8546015222596B40019B11F /* SigninVC.swift in Sources */,
 				A8FD8E2C222497AD00C7F62C /* MainTabbarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

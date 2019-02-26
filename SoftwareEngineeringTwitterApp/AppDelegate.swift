@@ -17,10 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        //let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: MainTabbarController())
+        let a = false
+        
+        if a {
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.rootViewController = UINavigationController(rootViewController: MainTabbarController())
+        }
+        else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let centerViewController = storyboard.instantiateViewController(withIdentifier: "SignupVC") as! SignupVC
+            window?.rootViewController = centerViewController
+        }
+        
         window?.makeKeyAndVisible()
         
         
