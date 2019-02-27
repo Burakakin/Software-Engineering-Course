@@ -14,7 +14,7 @@ struct User {
     var nameSurname: String
     var email: String
     var password: Int
-    //var profileImageUrl: URL
+    var profileImageUrl: String
     var date: Timestamp
     
     var userDictionary: [String: Any] {
@@ -23,9 +23,14 @@ struct User {
             "nameSurname": nameSurname,
             "email": email,
             "password": password,
-            //"profileImageUrl": profileImageUrl.absoluteString,
+            "profileImageUrl": profileImageUrl,
             "date":date
         ]
+    }
+    
+    
+     static var currentUserId: String {
+        return (Auth.auth().currentUser?.uid)!
     }
     
     
@@ -34,11 +39,12 @@ struct User {
 extension User {
     init?(dictionary: [String: Any]) {
         guard let userID = dictionary["userID"] as? String,
-        let nameSurname = dictionary["nameSurname"] as? String,
-        let email = dictionary["email"] as? String,
-        let password = dictionary["password"] as? Int,
-        let date = dictionary["date"] as? Timestamp else { return nil }
+            let nameSurname = dictionary["nameSurname"] as? String,
+            let email = dictionary["email"] as? String,
+            let password = dictionary["password"] as? Int,
+            let profileImageUrl = dictionary["profileImageUrl"] as? String,
+            let date = dictionary["date"] as? Timestamp else { return nil }
         
-        self.init(userID: userID, nameSurname: nameSurname, email: email, password: password, date: date)
+        self.init(userID: userID, nameSurname: nameSurname, email: email, password: password, profileImageUrl: profileImageUrl, date: date)
     }
 }

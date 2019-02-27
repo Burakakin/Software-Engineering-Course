@@ -65,42 +65,43 @@
                                     <action selector="signUpButton:" destination="Nzv-PU-a7t" eventType="touchUpInside" id="80x-TK-Hop"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="THF-35-H4Q">
-                                <rect key="frame" x="16" y="70" width="343" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="THF-35-H4Q">
+                                <rect key="frame" x="16" y="229" width="120.5" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WbA-1R-sNY">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCF-im-41d">
-                                        <rect key="frame" x="0.0" y="35" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="35" width="120.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IWc-kN-9SY">
-                                        <rect key="frame" x="0.0" y="70" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="70" width="120.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NbI-4k-WFK">
+                                <rect key="frame" x="53" y="75" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                        <constraints>
-                            <constraint firstItem="THF-35-H4Q" firstAttribute="leading" secondItem="0v8-Dz-BHd" secondAttribute="leading" constant="16" id="Byg-vw-KLT"/>
-                            <constraint firstItem="0v8-Dz-BHd" firstAttribute="trailing" secondItem="THF-35-H4Q" secondAttribute="trailing" constant="16" id="cDL-rB-vgw"/>
-                            <constraint firstItem="THF-35-H4Q" firstAttribute="top" secondItem="0v8-Dz-BHd" secondAttribute="top" constant="50" id="hY7-G8-anP"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0v8-Dz-BHd"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="aCF-im-41d" id="cNn-Dl-ewY"/>
                         <outlet property="nameSurnameTextField" destination="WbA-1R-sNY" id="uf8-D7-VPK"/>
                         <outlet property="passwordTextField" destination="IWc-kN-9SY" id="vzk-nh-ROA"/>
+                        <outlet property="profileImageView" destination="NbI-4k-WFK" id="Waz-TS-1YR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPA-Eb-POU" userLabel="First Responder" sceneMemberID="firstResponder"/>
