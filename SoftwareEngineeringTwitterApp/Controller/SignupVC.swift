@@ -81,6 +81,8 @@ class SignupVC: UIViewController {
                         
                         self.ref?.addDocument(data: newUser.userDictionary)
                         
+                        
+                        
                         print(User.currentUserId)
                     }
                 }

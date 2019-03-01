@@ -20,9 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        let a = false
+        let defaults = UserDefaults.standard
+        let userSignedIn = defaults.bool(forKey: "userSignedIn")
         
-        if a {
+        if userSignedIn {
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.rootViewController = UINavigationController(rootViewController: MainTabbarController())
         }

@@ -54,9 +54,40 @@
                                     <action selector="presentSignInButton:" destination="Nzv-PU-a7t" eventType="touchUpInside" id="VpM-gF-doc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goZ-Xx-m1N">
-                                <rect key="frame" x="99" y="478" width="194" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="THF-35-H4Q">
+                                <rect key="frame" x="16" y="257" width="343" height="100"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WbA-1R-sNY">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCF-im-41d">
+                                        <rect key="frame" x="0.0" y="35" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IWc-kN-9SY">
+                                        <rect key="frame" x="0.0" y="70" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aCF-im-41d" firstAttribute="top" secondItem="WbA-1R-sNY" secondAttribute="bottom" constant="5" id="xQG-Ed-NSU"/>
+                                </constraints>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="NbI-4k-WFK">
+                                <rect key="frame" x="112" y="57" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="IRP-Hr-84P"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goZ-Xx-m1N">
+                                <rect key="frame" x="90" y="377" width="194" height="45"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="0.71548068523406982" green="0.090701095759868622" blue="0.10778369754552841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,36 +96,19 @@
                                     <action selector="signUpButton:" destination="Nzv-PU-a7t" eventType="touchUpInside" id="80x-TK-Hop"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="THF-35-H4Q">
-                                <rect key="frame" x="16" y="229" width="120.5" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WbA-1R-sNY">
-                                        <rect key="frame" x="0.0" y="0.0" width="120.5" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCF-im-41d">
-                                        <rect key="frame" x="0.0" y="35" width="120.5" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IWc-kN-9SY">
-                                        <rect key="frame" x="0.0" y="70" width="120.5" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NbI-4k-WFK">
-                                <rect key="frame" x="53" y="75" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="goZ-Xx-m1N" firstAttribute="leading" secondItem="0v8-Dz-BHd" secondAttribute="leading" constant="90" id="8GS-iB-1HJ"/>
+                            <constraint firstItem="NbI-4k-WFK" firstAttribute="leading" secondItem="0v8-Dz-BHd" secondAttribute="leading" constant="112" id="9CU-Wy-bBu"/>
+                            <constraint firstItem="goZ-Xx-m1N" firstAttribute="top" secondItem="THF-35-H4Q" secondAttribute="bottom" constant="20" id="GAs-BM-Yd5"/>
+                            <constraint firstItem="THF-35-H4Q" firstAttribute="leading" secondItem="0v8-Dz-BHd" secondAttribute="leading" constant="16" id="K6d-bz-fz2"/>
+                            <constraint firstItem="0v8-Dz-BHd" firstAttribute="trailing" secondItem="THF-35-H4Q" secondAttribute="trailing" constant="16" id="hVR-WC-QuY"/>
+                            <constraint firstItem="0v8-Dz-BHd" firstAttribute="trailing" secondItem="NbI-4k-WFK" secondAttribute="trailing" constant="113" id="hlw-Eh-1nD"/>
+                            <constraint firstItem="THF-35-H4Q" firstAttribute="top" secondItem="NbI-4k-WFK" secondAttribute="bottom" constant="50" id="iPx-ts-aBX"/>
+                            <constraint firstItem="0v8-Dz-BHd" firstAttribute="trailing" secondItem="goZ-Xx-m1N" secondAttribute="trailing" constant="91" id="imn-Tj-0QN"/>
+                            <constraint firstItem="NbI-4k-WFK" firstAttribute="top" secondItem="0v8-Dz-BHd" secondAttribute="top" constant="37" id="n2S-CN-Fba"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0v8-Dz-BHd"/>
                     </view>
                     <connections>
@@ -131,6 +145,9 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="0.71548068523406982" green="0.090701095759868622" blue="0.10778369754552841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInButton:" destination="wdK-u8-SY0" eventType="touchUpInside" id="7Qq-U0-zmU"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lNA-7c-IW2">
                                 <rect key="frame" x="73" y="125" width="97" height="30"/>
@@ -150,6 +167,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <viewLayoutGuide key="safeArea" id="Cbe-1F-ZwG"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="lNA-7c-IW2" id="zDJ-Kh-HXT"/>
+                        <outlet property="passwordTextField" destination="Lvn-km-S8x" id="8Jq-WV-CKV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhV-nI-FHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,4 +207,7 @@
             <point key="canvasLocation" x="1148" y="1275"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="emptyProfileImage" width="400" height="400"/>
+    </resources>
 </document>
