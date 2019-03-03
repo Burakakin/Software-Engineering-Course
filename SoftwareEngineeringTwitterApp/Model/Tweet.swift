@@ -15,7 +15,7 @@ struct Tweet {
     var tweet: String
     var dateTweet: Timestamp
     
-    var tweetDictionary: [String: Any] {
+    var dictionary: [String: Any] {
         return [
             "tweet": tweet,
             "dateTweet": dateTweet

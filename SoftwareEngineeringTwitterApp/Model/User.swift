@@ -17,7 +17,7 @@ struct User {
     var profileImageUrl: String
     var date: Timestamp
     
-    var userDictionary: [String: Any] {
+    var dictionary: [String: Any] {
         return [
             "userID": userID,
             "nameSurname": nameSurname,
