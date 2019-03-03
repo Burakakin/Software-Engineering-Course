@@ -83,7 +83,7 @@ class SignupVC: UIViewController {
                         
                         
                         
-                        print(User.currentUserId)
+                        print(User.currentUserID)
                     }
                 }
                 

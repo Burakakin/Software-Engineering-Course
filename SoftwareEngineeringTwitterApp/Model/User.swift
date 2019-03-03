@@ -29,9 +29,13 @@ struct User {
     }
     
     
-     static var currentUserId: String {
+    static var currentUserID: String {
         return (Auth.auth().currentUser?.uid)!
     }
+    static var currentUserEmail: String {
+        return (Auth.auth().currentUser?.email)!
+    }
+    
     
     
 }
