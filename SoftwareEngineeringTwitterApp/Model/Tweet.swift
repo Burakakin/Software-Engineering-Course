@@ -14,11 +14,15 @@ struct Tweet {
     
     var tweet: String
     var dateTweet: Timestamp
+    var userID: String
+    var tweetID: UUID
     
     var dictionary: [String: Any] {
         return [
             "tweet": tweet,
-            "dateTweet": dateTweet
+            "dateTweet": dateTweet,
+            "userID": userID,
+            "tweetID": tweetID
         ]
     }
 }
@@ -28,8 +32,10 @@ extension Tweet {
     
     init?(dictionary: [String: Any]) {
         guard let tweet = dictionary["tweet"] as? String,
-            let dateTweet = dictionary["dateTweet"] as? Timestamp else { return nil }
+            let dateTweet = dictionary["dateTweet"] as? Timestamp,
+            let userID = dictionary["userID"] as? String,
+            let tweetID = dictionary["tweetID"] as? UUID else { return nil }
         
-        self.init(tweet: tweet, dateTweet: dateTweet)
+        self.init(tweet: tweet, dateTweet: dateTweet, userID: userID, tweetID: tweetID )
     }
 }
