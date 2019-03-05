@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if userSignedIn {
             window = UIWindow(frame: UIScreen.main.bounds)
-            window?.rootViewController = UINavigationController(rootViewController: MainTabbarController())
+            window?.rootViewController = MainTabbarController()
         }
         else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
