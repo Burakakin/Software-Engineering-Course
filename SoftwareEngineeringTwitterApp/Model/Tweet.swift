@@ -39,3 +39,8 @@ extension Tweet {
         self.init(tweet: tweet, dateTweet: dateTweet, userID: userID, tweetID: tweetID )
     }
 }
+
+
+let a = Tweet(tweet: "brk", dateTweet: Timestamp(), userID: User.currentUserID, tweetID: UUID())
+
+

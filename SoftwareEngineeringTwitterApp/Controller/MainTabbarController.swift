@@ -45,6 +45,14 @@ extension MainTabbarController {
     private func createController(title: String, VC: UIViewController) -> UINavigationController {
         
         let recentVC = UINavigationController(rootViewController: VC)
+        //recentVC.setNavigationBarHidden(true, animated: false)
+       
+        recentVC.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        recentVC.navigationBar.shadowImage = UIImage()
+        recentVC.navigationBar.isTranslucent = true
+        recentVC.view.backgroundColor = UIColor.clear
+       
+        
         recentVC.tabBarItem.title = title
         //recentVC.tabBarItem.image = UIImage(named: imageName)
         

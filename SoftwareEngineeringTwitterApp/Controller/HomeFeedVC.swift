@@ -9,6 +9,7 @@
 import UIKit
 
 class HomeFeedVC: UITableViewController {
+    var tweets = [Tweet]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,5 +24,21 @@ class HomeFeedVC: UITableViewController {
     @objc func addTweet() {
         print("SLM")
     }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tweets.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath)
+        let tweet = tweets[indexPath.row]
+        
+        cell.textLabel?.text = tweet.tweet
+        cell.detailTextLabel?.text = "\(tweet.dateTweet.dateValue())"
+        
+        return cell
+    }
 
 }
+
+
