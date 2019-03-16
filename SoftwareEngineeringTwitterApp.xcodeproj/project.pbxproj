@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8089B0F2231EEBB0069256F /* HomeFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8089B0E2231EEBB0069256F /* HomeFeedTableViewCell.swift */; };
 		A82FB9A32229AE1300EDD772 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FB9A22229AE1300EDD772 /* Tweet.swift */; };
 		A8546013222596980019B11F /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8546012222596980019B11F /* SignupVC.swift */; };
 		A8546015222596B40019B11F /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8546014222596B40019B11F /* SigninVC.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		21781D5A312A5C782BF519BD /* Pods_SoftwareEngineeringTwitterApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoftwareEngineeringTwitterApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D28D7F8416FF28EA90BBF81 /* Pods-SoftwareEngineeringTwitterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftwareEngineeringTwitterApp.debug.xcconfig"; path = "Target Support Files/Pods-SoftwareEngineeringTwitterApp/Pods-SoftwareEngineeringTwitterApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A8089B0E2231EEBB0069256F /* HomeFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedTableViewCell.swift; sourceTree = "<group>"; };
 		A82FB9A22229AE1300EDD772 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		A8546012222596980019B11F /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		A8546014222596B40019B11F /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		A8FD8E2E222497C800C7F62C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A8089B0E2231EEBB0069256F /* HomeFeedTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8089B0F2231EEBB0069256F /* HomeFeedTableViewCell.swift in Sources */,
 				A8546013222596980019B11F /* SignupVC.swift in Sources */,
 				A8FD8E3522249B2D00C7F62C /* ProfileVC.swift in Sources */,
 				A8FD8E3322249B1C00C7F62C /* SearchVC.swift in Sources */,
