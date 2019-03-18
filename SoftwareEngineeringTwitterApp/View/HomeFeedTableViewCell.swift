@@ -30,6 +30,16 @@ class HomeFeedTableViewCell: UITableViewCell {
     func configureCell(tweet: Tweet) {
         tweetLabel.text = tweet.tweet
         timeLabel.text = "\(tweet.dateTweet.dateValue())"
+        let userID = tweet.userID
+        FetchUserInfo.fetchUserInfo(userID: "\(userID)", completion: { user in
+            if let user = user {
+                print(user)
+                self.userNameLabel.text = user["nameSurname"] as? String
+                imageDownload.getImage(withUrl: "\(user["profileImageUrl"] ?? "")", completion: { (image) in
+                    self.userProfileImageView.image = image
+                })
+            }
+        })
     }
     
     @IBAction func favouriteButton(_ sender: UIButton) {

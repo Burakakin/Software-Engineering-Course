@@ -20,15 +20,9 @@ class HomeFeedVC: UITableViewController {
         tweets.append(a)
         let b = Tweet(tweet: "b", dateTweet: Timestamp(), userID: "b", tweetID: UUID())
         tweets.append(b)
-        let c = Tweet(tweet: "c", dateTweet: Timestamp(), userID: "c", tweetID: UUID())
+        let c = Tweet(tweet: "c", dateTweet: Timestamp(), userID: "FpjBlBcMZWVQYHFXHZavJWHZUk33", tweetID: UUID())
         tweets.append(c)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTweet))
-        
-        FetchUserInfo.fetchUserInfo(userID: "\(User.currentUserID)", completion: { user in
-            if let user = user {
-                print(user)
-            }
-        })
        
     }
     
