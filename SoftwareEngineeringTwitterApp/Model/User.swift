@@ -36,6 +36,11 @@ struct User {
         return (Auth.auth().currentUser?.email)!
     }
     
+    static var currentUserDisplayName: String {
+        return (Auth.auth().currentUser?.displayName)!
+    }
+    
+    
     
     
 }

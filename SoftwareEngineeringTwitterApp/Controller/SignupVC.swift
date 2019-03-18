@@ -79,9 +79,7 @@ class SignupVC: UIViewController {
                         
                         let newUser = User(userID: Auth.auth().currentUser!.uid, nameSurname: name, email: email, password: Int(password)!, profileImageUrl: photo, date: Timestamp())
                         
-                        self.ref?.addDocument(data: newUser.dictionary)
-                        
-                        
+                        self.ref?.document("\(User.currentUserID)").setData(newUser.dictionary)
                         
                         print(User.currentUserID)
                     }

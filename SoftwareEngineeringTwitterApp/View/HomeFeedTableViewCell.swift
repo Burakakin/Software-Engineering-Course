@@ -12,6 +12,8 @@ class HomeFeedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userProfileImageView: UIImageView!
     var indexForSelectedCell: ((Int) -> Void)?
     
     override func awakeFromNib() {
