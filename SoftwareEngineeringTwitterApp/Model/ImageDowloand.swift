@@ -55,12 +55,12 @@ class imageDownload {
 
 
 
-class FetchUserInfo {
+class FetchInfo {
     
     static func fetchUserInfo(userID: String, completion: @escaping (([String: Any]?) -> ())) {
         
         var ref: DocumentReference? = nil
-        ref = Firestore.firestore().collection("User").document("\(userID)")
+        ref = Firestore.firestore().collection("User").document(userID)
 //        var userInfo = [String: Any]()
         
         ref!.getDocument { (document, error) in
@@ -73,8 +73,14 @@ class FetchUserInfo {
                 completion(nil)
             }
         }
-        
-       
+    }
+    
+    
+    
+    static func pushTweet(tweet: Tweet, tweetID: String) {
+        var ref: CollectionReference? = nil
+        ref = Firestore.firestore().collection("Tweet")
+        ref!.document(tweetID).setData(tweet.dictionary)
     }
     
 }
