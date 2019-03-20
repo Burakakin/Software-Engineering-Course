@@ -83,4 +83,27 @@ class FetchInfo {
         ref!.document(tweetID).setData(tweet.dictionary)
     }
     
+    static func favouriteTweet(userID: String, tweetID: String) {
+        var ref: CollectionReference? = nil
+        ref = Firestore.firestore().collection("User").document(User.currentUserID).collection("Favourite")
+        ref?.document(tweetID).setData(["tweetID": tweetID, "userID": userID])
+    }
+    
+    
+    static func fetchHomeFeed(completion: @escaping ([String: Any]?) -> ()) {
+        
+        var ref: CollectionReference? = nil
+        ref = Firestore.firestore().collection("Tweet")
+        ref?.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    completion(document.data())
+                }
+            }
+        }
+    }
+    
 }

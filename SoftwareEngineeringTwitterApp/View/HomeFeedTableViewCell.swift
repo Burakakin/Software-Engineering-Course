@@ -34,7 +34,7 @@ class HomeFeedTableViewCell: UITableViewCell {
         let userID = tweet.userID
         FetchInfo.fetchUserInfo(userID: "\(userID)", completion: { user in
             if let user = user {
-                print(user)
+                print("Configure Cell -> \(user)")
                 self.userNameLabel.text = user["nameSurname"] as? String
                 imageDownload.getImage(withUrl: "\(user["profileImageUrl"] ?? "")", completion: { (image) in
                     self.userProfileImageView.image = image
