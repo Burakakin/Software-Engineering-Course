@@ -19,14 +19,7 @@ class HomeFeedVC: UITableViewController {
         let settings = db.settings
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
-        //self.view.backgroundColor = UIColor.blue
-        // Do any additional setup after loading the view.
-//        let a = Tweet(tweet: "a", dateTweet: Timestamp(), userID: "a", tweetID: UUID().uuidString)
-//        tweets.append(a)
-//        let b = Tweet(tweet: "b", dateTweet: Timestamp(), userID: "b", tweetID: UUID().uuidString)
-//        tweets.append(b)
-//        let c = Tweet(tweet: "c", dateTweet: Timestamp(), userID: "FpjBlBcMZWVQYHFXHZavJWHZUk33", tweetID: UUID().uuidString)
-//        tweets.append(c)
+       
         FetchInfo.fetchHomeFeed { (homeFeed) in
             if let homeFeed = homeFeed {
                 //print(homeFeed)
