@@ -79,21 +79,39 @@ class FetchInfo {
     
     static func pushTweet(tweet: Tweet, tweetID: String) {
         var ref: CollectionReference? = nil
-        ref = Firestore.firestore().collection("Tweet")
+        ref = Firestore.firestore().collection("Tweet").document(User.currentUserID).collection("UserTweet")
+        ref!.document(tweetID).setData(tweet.dictionary)
+        ref = Firestore.firestore().collection("Tweet").document(User.currentUserID).collection("TweetPool")
         ref!.document(tweetID).setData(tweet.dictionary)
     }
     
     static func favouriteTweet(userID: String, tweetID: String) {
         var ref: CollectionReference? = nil
         ref = Firestore.firestore().collection("User").document(User.currentUserID).collection("Favourite")
-        ref?.document(tweetID).setData(["tweetID": tweetID, "userID": userID])
+        
+        ref?.document(tweetID).getDocument { (document, error) in
+            if let document = document, document.exists {
+                ref?.document(tweetID).delete() { err in
+                    if let err = err {
+                        print("Error removing document: \(err)")
+                    } else {
+                        print("Document successfully removed!")
+                    }
+                }
+            } else {
+                print("Document does not exist")
+                ref?.document(tweetID).setData(["tweetID": tweetID, "userID": userID])
+            }
+        }
+        
     }
     
     
     static func fetchHomeFeed(completion: @escaping ([String: Any]?) -> ()) {
         
         var ref: CollectionReference? = nil
-        ref = Firestore.firestore().collection("Tweet")
+        //ref = Firestore.firestore().collection("Tweet")
+        ref = Firestore.firestore().collection("Tweet").document(User.currentUserID).collection("TweetPool")
         ref?.getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
