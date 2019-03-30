@@ -124,4 +124,23 @@ class FetchInfo {
         }
     }
     
+    
+    
+    static func checkFavourites(tweetID: String, completion: @escaping ([String: Any]?) -> ()) {
+        
+        var ref: CollectionReference? = nil
+        //ref = Firestore.firestore().collection("Tweet")
+        ref = Firestore.firestore().collection("User").document(User.currentUserID).collection("Favourite")
+        
+        ref?.document(tweetID).getDocument { (document, error) in
+            if let document = document, document.exists {
+                let favouriteData = document.data()!
+                completion(favouriteData)
+                print("Document data: \(favouriteData)")
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
+    
 }

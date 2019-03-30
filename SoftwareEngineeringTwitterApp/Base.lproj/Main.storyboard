@@ -14,16 +14,16 @@
         <scene sceneID="qyP-aX-ttk">
             <objects>
                 <tableViewController storyboardIdentifier="HomeFeedVC" id="gFh-0h-c56" customClass="HomeFeedVC" customModule="SoftwareEngineeringTwitterApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ADe-KR-ZFd">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ADe-KR-ZFd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="100" id="a2v-c1-e2N" customClass="HomeFeedTableViewCell" customModule="SoftwareEngineeringTwitterApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="120" id="a2v-c1-e2N" customClass="HomeFeedTableViewCell" customModule="SoftwareEngineeringTwitterApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a2v-c1-e2N" id="t7c-aD-dCu">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AWS-NA-wUG">
@@ -61,22 +61,39 @@
                                                 </stackView>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woA-JP-vYf">
-                                            <rect key="frame" x="319" y="69" width="46" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button"/>
-                                            <connections>
-                                                <action selector="favouriteButton:" destination="a2v-c1-e2N" eventType="touchUpInside" id="uuN-vN-JSl"/>
-                                            </connections>
-                                        </button>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="k2v-IQ-pMz">
+                                            <rect key="frame" x="16" y="80" width="343" height="39.5"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igt-e1-r2I">
+                                                    <rect key="frame" x="0.0" y="0.0" width="253.5" height="39.5"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woA-JP-vYf">
+                                                    <rect key="frame" x="303.5" y="0.0" width="39.5" height="39.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="39.5" id="3f8-h1-MjR"/>
+                                                        <constraint firstAttribute="height" constant="39.5" id="YE2-jc-p5v"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="favouriteButton:" destination="a2v-c1-e2N" eventType="touchUpInside" id="uuN-vN-JSl"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="k2v-IQ-pMz" firstAttribute="top" secondItem="AWS-NA-wUG" secondAttribute="bottom" id="E7X-mE-t2m"/>
+                                        <constraint firstAttribute="trailing" secondItem="k2v-IQ-pMz" secondAttribute="trailing" constant="16" id="Kz2-u4-Ory"/>
+                                        <constraint firstAttribute="bottom" secondItem="k2v-IQ-pMz" secondAttribute="bottom" id="NUR-Aw-4gJ"/>
                                         <constraint firstItem="AWS-NA-wUG" firstAttribute="top" secondItem="t7c-aD-dCu" secondAttribute="top" constant="5" id="TPf-s2-7dJ"/>
                                         <constraint firstItem="AWS-NA-wUG" firstAttribute="leading" secondItem="t7c-aD-dCu" secondAttribute="leading" constant="10" id="mm7-ah-iln"/>
                                         <constraint firstAttribute="trailing" secondItem="AWS-NA-wUG" secondAttribute="trailing" constant="16" id="qaU-c4-QEG"/>
+                                        <constraint firstItem="k2v-IQ-pMz" firstAttribute="leading" secondItem="t7c-aD-dCu" secondAttribute="leading" constant="16" id="uMF-Qh-q46"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="favouriteButton" destination="woA-JP-vYf" id="yT5-XT-h01"/>
                                     <outlet property="timeLabel" destination="tqr-H5-4u5" id="zad-aF-pKo"/>
                                     <outlet property="tweetLabel" destination="8nm-yk-hgY" id="POo-ng-ZCW"/>
                                     <outlet property="userNameLabel" destination="cvA-ve-yfa" id="Fzu-Ay-lN9"/>
