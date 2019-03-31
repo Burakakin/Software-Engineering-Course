@@ -14,7 +14,7 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <Protobuf/Any.pbobjc.h>
+#import <protobuf/Any.pbobjc.h>
 #else
  #import "google/protobuf/Any.pbobjc.h"
 #endif
@@ -98,7 +98,9 @@ typedef struct GPBAny__storage_ {
         "\001\001\004\241!!\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
-    NSAssert(descriptor == nil, @"Startup recursed!");
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
     descriptor = localDescriptor;
   }
   return descriptor;

@@ -41,7 +41,7 @@ class HomeFeedVC: UITableViewController {
     @objc func addTweet() {
         print("SLM")
         let tweetID = UUID().uuidString
-        let newTweet = Tweet(tweet: "AS", dateTweet: Timestamp(), userID: "FpjBlBcMZWVQYHFXHZavJWHZUk33", tweetID: tweetID)
+        let newTweet = Tweet(tweet: "SA", dateTweet: Timestamp(), userID: User.currentUserID, tweetID: tweetID)
         FetchInfo.pushTweet(tweet: newTweet, tweetID: tweetID)
     }
     
