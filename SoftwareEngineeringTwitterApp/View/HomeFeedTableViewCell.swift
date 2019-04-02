@@ -46,8 +46,6 @@ class HomeFeedTableViewCell: UITableViewCell {
             }
         })
         
-        
-      
         FetchInfo.checkFavourites(tweetID: tweetID) { favouriteTweets in
             guard let favouriteTweet = favouriteTweets else { return }
             if (favouriteTweet["tweetID"] as! String) == "\(tweetID)" {
@@ -74,24 +72,4 @@ class HomeFeedTableViewCell: UITableViewCell {
         }
     }
     
-}
-
-
-
-extension UIResponder {
-    
-    func next<T: UIResponder>(_ type: T.Type) -> T? {
-        return next as? T ?? next?.next(type)
-    }
-}
-
-extension UITableViewCell {
-    
-    var tableView: UITableView? {
-        return next(UITableView.self)
-    }
-    
-    var indexPath: IndexPath? {
-        return tableView?.indexPath(for: self)
-    }
 }

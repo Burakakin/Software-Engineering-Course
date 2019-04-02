@@ -112,6 +112,76 @@
             </objects>
             <point key="canvasLocation" x="-175.19999999999999" y="1270.6146926536733"/>
         </scene>
+        <!--SearchVC-->
+        <scene sceneID="45E-ZX-Rqh">
+            <objects>
+                <tableViewController storyboardIdentifier="SearchVC" id="0eV-68-15K" customClass="SearchVC" customModule="SoftwareEngineeringTwitterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="u6h-Df-iAs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="60" id="w7s-Gb-fxT" customClass="SearchTableViewCell" customModule="SoftwareEngineeringTwitterApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w7s-Gb-fxT" id="QiV-AQ-ApM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="k97-90-qpx">
+                                            <rect key="frame" x="10" y="4" width="355" height="51.5"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="edD-lv-oEB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="51.5"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Al-AZ-AXC">
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="51.5"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2MG-K7-s2P">
+                                                    <rect key="frame" x="80" y="0.0" width="275" height="51.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTs-Mw-fuj">
+                                                            <rect key="frame" x="0.0" y="0.0" width="130" height="51.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzF-LC-YY5">
+                                                            <rect key="frame" x="145" y="0.0" width="130" height="51.5"/>
+                                                            <state key="normal" title="Follow +"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2MG-K7-s2P" firstAttribute="leading" secondItem="edD-lv-oEB" secondAttribute="trailing" id="UfZ-hH-JPX"/>
+                                                <constraint firstAttribute="bottom" secondItem="2MG-K7-s2P" secondAttribute="bottom" id="keN-Ld-4sr"/>
+                                                <constraint firstItem="2MG-K7-s2P" firstAttribute="top" secondItem="k97-90-qpx" secondAttribute="top" id="t9U-Fe-ajC"/>
+                                                <constraint firstAttribute="trailing" secondItem="2MG-K7-s2P" secondAttribute="trailing" id="vJh-LG-Awd"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="k97-90-qpx" firstAttribute="leading" secondItem="QiV-AQ-ApM" secondAttribute="leading" constant="10" id="QvX-1z-koh"/>
+                                        <constraint firstAttribute="trailing" secondItem="k97-90-qpx" secondAttribute="trailing" constant="10" id="U5Q-Uc-eNS"/>
+                                        <constraint firstAttribute="bottom" secondItem="k97-90-qpx" secondAttribute="bottom" constant="4" id="gUb-E1-KV6"/>
+                                        <constraint firstItem="k97-90-qpx" firstAttribute="top" secondItem="QiV-AQ-ApM" secondAttribute="top" constant="4" id="vwn-yl-c9O"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0eV-68-15K" id="fmN-We-niN"/>
+                            <outlet property="delegate" destination="0eV-68-15K" id="TtY-u6-irc"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Q1-YH-vYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="477.60000000000002" y="1268.8155922038982"/>
+        </scene>
         <!--SignupVC-->
         <scene sceneID="ffb-e1-e61">
             <objects>
@@ -263,21 +333,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhV-nI-FHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="788" y="545.57721139430294"/>
-        </scene>
-        <!--SearchVC-->
-        <scene sceneID="KRV-WQ-BCD">
-            <objects>
-                <viewController storyboardIdentifier="SearchVC" id="FHo-MH-axz" customClass="SearchVC" customModule="SoftwareEngineeringTwitterApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KoL-9b-G8k">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="Clm-uM-g7H"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NlG-jm-olA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="484" y="1275"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="nMg-g6-o8F">
