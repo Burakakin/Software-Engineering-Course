@@ -40,6 +40,13 @@ class SearchVC: UITableViewController {
         let user = users[indexPath.row]
         cell.configureCell(user: user)
         
+        cell.indexForSelectedCell = { index in
+            let tweetID = self.users[index].nameSurname
+            let userID = self.users[index].userID
+            
+            print("TweetID: \(tweetID)\nUserID: \(userID)")
+        }
+        
         return cell
     }
     

@@ -154,6 +154,9 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzF-LC-YY5">
                                                             <rect key="frame" x="155" y="0.0" width="140" height="51.5"/>
                                                             <state key="normal" title="Follow +"/>
+                                                            <connections>
+                                                                <action selector="FollowFriend:" destination="w7s-Gb-fxT" eventType="touchUpInside" id="wMx-9P-fOG"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -196,14 +199,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fB-hz-dPN">
-                                <rect key="frame" x="276" y="617" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="presentSignInButton:" destination="Nzv-PU-a7t" eventType="touchUpInside" id="VpM-gF-doc"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="THF-35-H4Q">
                                 <rect key="frame" x="16" y="257" width="343" height="160"/>
                                 <subviews>
@@ -249,18 +244,31 @@
                                     <action selector="signUpButton:" destination="Nzv-PU-a7t" eventType="touchUpInside" id="80x-TK-Hop"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fB-hz-dPN">
+                                <rect key="frame" x="150" y="609" width="74" height="38"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="presentSignInButton:" destination="Nzv-PU-a7t" eventType="touchUpInside" id="VpM-gF-doc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6fB-hz-dPN" firstAttribute="leading" secondItem="0v8-Dz-BHd" secondAttribute="leading" constant="150" id="5hd-Wn-azx"/>
                             <constraint firstItem="goZ-Xx-m1N" firstAttribute="leading" secondItem="0v8-Dz-BHd" secondAttribute="leading" constant="90" id="8GS-iB-1HJ"/>
                             <constraint firstItem="NbI-4k-WFK" firstAttribute="leading" secondItem="0v8-Dz-BHd" secondAttribute="leading" constant="112" id="9CU-Wy-bBu"/>
                             <constraint firstItem="goZ-Xx-m1N" firstAttribute="top" secondItem="THF-35-H4Q" secondAttribute="bottom" constant="20" id="GAs-BM-Yd5"/>
                             <constraint firstItem="THF-35-H4Q" firstAttribute="leading" secondItem="0v8-Dz-BHd" secondAttribute="leading" constant="16" id="K6d-bz-fz2"/>
+                            <constraint firstItem="0v8-Dz-BHd" firstAttribute="trailing" secondItem="6fB-hz-dPN" secondAttribute="trailing" constant="151" id="UFD-vl-cWz"/>
                             <constraint firstItem="0v8-Dz-BHd" firstAttribute="trailing" secondItem="THF-35-H4Q" secondAttribute="trailing" constant="16" id="hVR-WC-QuY"/>
                             <constraint firstItem="0v8-Dz-BHd" firstAttribute="trailing" secondItem="NbI-4k-WFK" secondAttribute="trailing" constant="113" id="hlw-Eh-1nD"/>
                             <constraint firstItem="THF-35-H4Q" firstAttribute="top" secondItem="NbI-4k-WFK" secondAttribute="bottom" constant="50" id="iPx-ts-aBX"/>
                             <constraint firstItem="0v8-Dz-BHd" firstAttribute="trailing" secondItem="goZ-Xx-m1N" secondAttribute="trailing" constant="91" id="imn-Tj-0QN"/>
                             <constraint firstItem="NbI-4k-WFK" firstAttribute="top" secondItem="0v8-Dz-BHd" secondAttribute="top" constant="37" id="n2S-CN-Fba"/>
+                            <constraint firstItem="0v8-Dz-BHd" firstAttribute="bottom" secondItem="6fB-hz-dPN" secondAttribute="bottom" constant="20" id="s3w-WB-H6s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0v8-Dz-BHd"/>
                     </view>
@@ -283,14 +291,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5V-lr-muC">
-                                <rect key="frame" x="202" y="537" width="157" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="presentSignUpButton:" destination="wdK-u8-SY0" eventType="touchUpInside" id="Vrx-Ur-OBl"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ltV-Tu-Pmz">
                                 <rect key="frame" x="16" y="70" width="343" height="110"/>
                                 <subviews>
@@ -311,9 +311,8 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEu-s5-by8">
-                                <rect key="frame" x="78" y="226" width="194" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEu-s5-by8">
+                                <rect key="frame" x="90" y="228" width="194" height="45"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="0.71548068523406982" green="0.090701095759868622" blue="0.10778369754552841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -322,12 +321,28 @@
                                     <action selector="signInButton:" destination="wdK-u8-SY0" eventType="touchUpInside" id="7Qq-U0-zmU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5V-lr-muC">
+                                <rect key="frame" x="109" y="609" width="157" height="38"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="presentSignUpButton:" destination="wdK-u8-SY0" eventType="touchUpInside" id="Vrx-Ur-OBl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="HEu-s5-by8" firstAttribute="top" secondItem="ltV-Tu-Pmz" secondAttribute="bottom" constant="48" id="ArS-52-npg"/>
+                            <constraint firstItem="Cbe-1F-ZwG" firstAttribute="trailing" secondItem="S5V-lr-muC" secondAttribute="trailing" constant="109" id="VS9-CJ-7fu"/>
+                            <constraint firstItem="HEu-s5-by8" firstAttribute="leading" secondItem="Cbe-1F-ZwG" secondAttribute="leading" constant="90" id="XcF-ez-sZ3"/>
+                            <constraint firstItem="S5V-lr-muC" firstAttribute="leading" secondItem="Cbe-1F-ZwG" secondAttribute="leading" constant="109" id="ZYY-q2-mrz"/>
                             <constraint firstItem="ltV-Tu-Pmz" firstAttribute="leading" secondItem="Cbe-1F-ZwG" secondAttribute="leading" constant="16" id="fea-Bx-GTm"/>
                             <constraint firstItem="ltV-Tu-Pmz" firstAttribute="top" secondItem="Cbe-1F-ZwG" secondAttribute="top" constant="50" id="g49-bq-NAx"/>
+                            <constraint firstItem="Cbe-1F-ZwG" firstAttribute="bottom" secondItem="S5V-lr-muC" secondAttribute="bottom" constant="20" id="gtX-Qq-tvB"/>
                             <constraint firstItem="Cbe-1F-ZwG" firstAttribute="trailing" secondItem="ltV-Tu-Pmz" secondAttribute="trailing" constant="16" id="hZy-5O-aD7"/>
+                            <constraint firstItem="Cbe-1F-ZwG" firstAttribute="trailing" secondItem="HEu-s5-by8" secondAttribute="trailing" constant="91" id="wxw-Bw-TDP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cbe-1F-ZwG"/>
                     </view>
