@@ -7,12 +7,40 @@
 //
 
 import UIKit
+import Firebase
 
 class SearchVC: UITableViewController {
 
+    var users = [User]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        FetchInfo.getUserProfile { (userDictionary) in
+            if let userDictionary = userDictionary {
+                let timestamp: Timestamp = userDictionary["date"] as! Timestamp
+                let newTweet = User(userID: userDictionary["userID"] as! String, nameSurname: userDictionary["nameSurname"] as! String, email: userDictionary["email"] as! String, password: userDictionary["password"] as! Int, profileImageUrl: userDictionary["profileImageUrl"] as! String, date: timestamp)
+                DispatchQueue.main.async {
+                    self.users.append(newTweet)
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+   
+   
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchTableViewCell
+        let user = users[indexPath.row]
+        cell.configureCell(user: user)
+        
+        return cell
     }
     
 

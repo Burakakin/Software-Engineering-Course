@@ -77,6 +77,26 @@ class imageDownload {
 
 class FetchInfo {
     
+    static func getUserProfile(completion: @escaping ([String: Any]?) -> ()) {
+        var ref: CollectionReference? = nil
+        //ref = Firestore.firestore().collection("Tweet")
+        ref = Firestore.firestore().collection("User")
+        ref?.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    //print("\(document.documentID) => \(document.data())")
+                    FetchInfo.fetchUserInfo(userID: document.documentID, completion: { (userData) in
+                        if let userData = userData {
+                           completion(userData)
+                        }
+                    })
+                }
+            }
+        }
+    }
+    
     static func fetchUserInfo(userID: String, completion: @escaping (([String: Any]?) -> ())) {
         
         var ref: DocumentReference? = nil
