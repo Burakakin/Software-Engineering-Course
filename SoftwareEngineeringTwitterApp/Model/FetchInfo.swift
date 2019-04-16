@@ -196,6 +196,20 @@ class FetchInfo {
                         print("Document successfully removed!")
                     }
                 }
+                fetchHomeFeed(userID: userID, subCollection: "TweetPool", completion: { (tweetPool) in
+                    if let tweetPool = tweetPool {
+                        if tweetPool["userID"] as! String == userID {
+                            ref = Firestore.firestore().collection("Tweet").document(User.currentUserID).collection("TweetPool")
+                            ref?.document("\(tweetPool["tweetID"]!)").delete() { err in
+                                if let err = err {
+                                    print("Error removing document: \(err)")
+                                } else {
+                                    print("Document successfully removed!")
+                                }
+                            }
+                        }
+                    }
+                })
             } else {
                 print("Document does not exist")
                 ref?.document(userID).setData(["userID": userID])
