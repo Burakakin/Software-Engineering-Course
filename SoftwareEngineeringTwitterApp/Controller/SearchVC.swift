@@ -44,6 +44,18 @@ class SearchVC: UITableViewController {
             let tweetID = self.users[index].nameSurname
             let userID = self.users[index].userID
             
+            FetchInfo.fetchHomeFeed(userID: userID, subCollection: "UserTweet", completion: { userTweet in
+                if userID == User.currentUserID {
+                    print("You choose yourself")
+                }
+                else {
+                    if let userTweet = userTweet {
+                        FetchInfo.addFriend(userID: userID, UserTweets: userTweet)
+                        print(userTweet["tweetID"]!)
+                    }
+                }
+            })
+            
             print("TweetID: \(tweetID)\nUserID: \(userID)")
         }
         

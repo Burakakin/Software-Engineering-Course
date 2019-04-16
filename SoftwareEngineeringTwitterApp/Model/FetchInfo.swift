@@ -147,11 +147,11 @@ class FetchInfo {
     }
     
     
-    static func fetchHomeFeed(completion: @escaping ([String: Any]?) -> ()) {
+    static func fetchHomeFeed(userID: String, subCollection: String, completion: @escaping ([String: Any]?) -> ()) {
         
         var ref: CollectionReference? = nil
         //ref = Firestore.firestore().collection("Tweet")
-        ref = Firestore.firestore().collection("Tweet").document(User.currentUserID).collection("TweetPool")
+        ref = Firestore.firestore().collection("Tweet").document(userID).collection(subCollection)
         ref?.getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -181,6 +181,29 @@ class FetchInfo {
                 print("Document does not exist")
             }
         }
+    }
+    
+    static func addFriend(userID: String, UserTweets: [String: Any]) {
+        var ref: CollectionReference? = nil
+        ref = Firestore.firestore().collection("User").document(User.currentUserID).collection("Friend")
+        
+        ref?.document(userID).getDocument { (document, error) in
+            if let document = document, document.exists {
+                ref?.document(userID).delete() { err in
+                    if let err = err {
+                        print("Error removing document: \(err)")
+                    } else {
+                        print("Document successfully removed!")
+                    }
+                }
+            } else {
+                print("Document does not exist")
+                ref?.document(userID).setData(["userID": userID])
+                ref = Firestore.firestore().collection("Tweet").document(User.currentUserID).collection("TweetPool")
+                ref?.document("\(UserTweets["tweetID"]!)").setData(UserTweets)
+            }
+        }
+        
     }
     
 }

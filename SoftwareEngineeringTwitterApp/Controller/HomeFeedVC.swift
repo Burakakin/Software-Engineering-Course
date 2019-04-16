@@ -20,7 +20,7 @@ class HomeFeedVC: UITableViewController {
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
        
-        FetchInfo.fetchHomeFeed { (homeFeed) in
+        FetchInfo.fetchHomeFeed(userID: User.currentUserID, subCollection: "TweetPool") { (homeFeed) in
             if let homeFeed = homeFeed {
                 //print(homeFeed)
                 let timestamp: Timestamp = homeFeed["dateTweet"] as! Timestamp
