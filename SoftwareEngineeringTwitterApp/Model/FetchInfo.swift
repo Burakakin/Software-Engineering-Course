@@ -152,7 +152,7 @@ class FetchInfo {
         var ref: CollectionReference? = nil
         //ref = Firestore.firestore().collection("Tweet")
         ref = Firestore.firestore().collection("Tweet").document(userID).collection(subCollection)
-        ref?.getDocuments() { (querySnapshot, err) in
+        ref?.order(by: "dateTweet", descending: true).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {

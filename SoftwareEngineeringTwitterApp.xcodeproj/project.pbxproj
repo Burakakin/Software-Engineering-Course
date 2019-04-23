@@ -15,6 +15,7 @@
 		A874DF5C2225A60300B77FCB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A874DF5B2225A60300B77FCB /* User.swift */; };
 		A874DF5E2225B2EA00B77FCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A874DF5D2225B2EA00B77FCB /* GoogleService-Info.plist */; };
 		A8A6ED1A2253D43800588914 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6ED192253D43800588914 /* SearchTableViewCell.swift */; };
+		A8B71C7C226E8E3700104DAF /* PushTweetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B71C7B226E8E3700104DAF /* PushTweetVC.swift */; };
 		A8FD8E0C2224901C00C7F62C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FD8E0B2224901C00C7F62C /* AppDelegate.swift */; };
 		A8FD8E112224901C00C7F62C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FD8E0F2224901C00C7F62C /* Main.storyboard */; };
 		A8FD8E132224901E00C7F62C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8FD8E122224901E00C7F62C /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		A874DF5B2225A60300B77FCB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A874DF5D2225B2EA00B77FCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A8A6ED192253D43800588914 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		A8B71C7B226E8E3700104DAF /* PushTweetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTweetVC.swift; sourceTree = "<group>"; };
 		A8FD8E082224901C00C7F62C /* SoftwareEngineeringTwitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoftwareEngineeringTwitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8FD8E0B2224901C00C7F62C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8FD8E102224901C00C7F62C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				A8FD8E3422249B2D00C7F62C /* ProfileVC.swift */,
 				A8546014222596B40019B11F /* SigninVC.swift */,
 				A8546012222596980019B11F /* SignupVC.swift */,
+				A8B71C7B226E8E3700104DAF /* PushTweetVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				A85D0BB2223DAB9E00076EF0 /* FetchInfo.swift in Sources */,
 				A874DF5C2225A60300B77FCB /* User.swift in Sources */,
 				A8FD8E0C2224901C00C7F62C /* AppDelegate.swift in Sources */,
+				A8B71C7C226E8E3700104DAF /* PushTweetVC.swift in Sources */,
 				A8A6ED1A2253D43800588914 /* SearchTableViewCell.swift in Sources */,
 				A8546015222596B40019B11F /* SigninVC.swift in Sources */,
 				A8FD8E2C222497AD00C7F62C /* MainTabbarController.swift in Sources */,

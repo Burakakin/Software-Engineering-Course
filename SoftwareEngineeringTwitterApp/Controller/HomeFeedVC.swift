@@ -39,10 +39,16 @@ class HomeFeedVC: UITableViewController {
 
     
     @objc func addTweet() {
-        print("SLM")
-        let tweetID = UUID().uuidString
-        let newTweet = Tweet(tweet: "SA", dateTweet: Timestamp(), userID: User.currentUserID, tweetID: tweetID)
-        FetchInfo.pushTweet(tweet: newTweet, tweetID: tweetID)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let pushTweetPopUp = storyboard.instantiateViewController(withIdentifier: "PushTweetVC") as! PushTweetVC
+        self.addChild(pushTweetPopUp)
+        pushTweetPopUp.view.frame = self.view.frame
+        self.view.addSubview(pushTweetPopUp.view)
+        pushTweetPopUp.didMove(toParent: self)
+//        print("SLM")
+//        let tweetID = UUID().uuidString
+//        let newTweet = Tweet(tweet: "SA", dateTweet: Timestamp(), userID: User.currentUserID, tweetID: tweetID)
+//        FetchInfo.pushTweet(tweet: newTweet, tweetID: tweetID)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
