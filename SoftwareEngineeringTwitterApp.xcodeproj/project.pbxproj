@@ -232,9 +232,11 @@
 				TargetAttributes = {
 					A8FD8E072224901C00C7F62C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					A8FD8E1B2224901E00C7F62C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = A8FD8E072224901C00C7F62C;
 					};
 				};
@@ -529,7 +531,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SoftwareEngineeringTwitterApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -548,7 +550,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SoftwareEngineeringTwitterApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -560,6 +562,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97K3K7BYBU;
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/Pods/**";
 				INFOPLIST_FILE = SoftwareEngineeringTwitterAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -568,7 +571,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SoftwareEngineeringTwitterAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoftwareEngineeringTwitterApp.app/SoftwareEngineeringTwitterApp";
 			};
@@ -589,7 +592,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SoftwareEngineeringTwitterAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoftwareEngineeringTwitterApp.app/SoftwareEngineeringTwitterApp";
 			};

@@ -199,7 +199,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSi-9x-00H">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSi-9x-00H">
                                 <rect key="frame" x="74" y="246" width="240" height="175"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type Here" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmU-Pe-zmx">
@@ -235,9 +235,9 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="VSi-9x-00H" firstAttribute="top" secondItem="mW0-3Z-DsG" secondAttribute="top" constant="226" id="62w-0g-beo"/>
+                            <constraint firstItem="VSi-9x-00H" firstAttribute="top" secondItem="DpI-ID-uwj" secondAttribute="top" constant="246" id="62w-0g-beo"/>
                             <constraint firstItem="mW0-3Z-DsG" firstAttribute="bottom" secondItem="VSi-9x-00H" secondAttribute="bottom" constant="246" id="dxV-jq-5KC"/>
                             <constraint firstItem="mW0-3Z-DsG" firstAttribute="trailing" secondItem="VSi-9x-00H" secondAttribute="trailing" constant="61" id="f6z-mS-CuB"/>
                             <constraint firstItem="VSi-9x-00H" firstAttribute="leading" secondItem="mW0-3Z-DsG" secondAttribute="leading" constant="74" id="fhr-Qk-Rhn"/>
