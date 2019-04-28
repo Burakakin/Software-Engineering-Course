@@ -30,6 +30,14 @@ class HomeFeedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.userProfileImageView.image = nil // or set a placeholder image
+        self.favouriteButton.isSelected = false
+        self.retweetButton.isSelected = false
+    }
+    
     func configureCell(tweet: Tweet) {
         
         self.favouriteButton.setImage(UIImage(named:"favourite-star-filled")?.withRenderingMode(.alwaysOriginal), for: .selected)
