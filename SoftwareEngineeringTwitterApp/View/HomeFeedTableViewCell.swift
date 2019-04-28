@@ -30,6 +30,24 @@ class HomeFeedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBOutlet weak var ContainerView: UIView!{
+        didSet {
+            ContainerView.backgroundColor = UIColor.clear
+            ContainerView.layer.shadowOpacity = 0.7
+            ContainerView.layer.shadowRadius = 2
+            ContainerView.layer.shadowColor = UIColor.gray.cgColor
+            ContainerView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        }
+    }
+    
+    @IBOutlet weak var clippingView: UIView!{
+        didSet {
+            clippingView.layer.cornerRadius = 10
+            clippingView.backgroundColor = UIColor.white
+            clippingView.layer.masksToBounds = true
+        }
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         

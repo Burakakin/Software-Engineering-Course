@@ -58,7 +58,7 @@ class HomeFeedVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! HomeFeedTableViewCell
         let tweet = tweets[indexPath.row]
-        
+        cell.selectionStyle = .none
         cell.configureCell(tweet: tweet)
         
         cell.indexForSelectedCell = { index in
