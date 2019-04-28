@@ -139,7 +139,28 @@ class FetchInfo {
                     }
                 }
             } else {
-                print("Document does not exist")
+                print("Favourite Document was added")
+                ref?.document(tweetID).setData(["tweetID": tweetID, "userID": userID])
+            }
+        }
+        
+    }
+    
+    static func retweetTweet(userID: String, tweetID: String) {
+        var ref: CollectionReference? = nil
+        ref = Firestore.firestore().collection("User").document(User.currentUserID).collection("Retweet")
+        
+        ref?.document(tweetID).getDocument { (document, error) in
+            if let document = document, document.exists {
+                ref?.document(tweetID).delete() { err in
+                    if let err = err {
+                        print("Error removing document: \(err)")
+                    } else {
+                        print("Document successfully removed!")
+                    }
+                }
+            } else {
+                print("Favourite Document was added")
                 ref?.document(tweetID).setData(["tweetID": tweetID, "userID": userID])
             }
         }
@@ -176,7 +197,7 @@ class FetchInfo {
             if let document = document, document.exists {
                 let favouriteData = document.data()!
                 completion(favouriteData)
-                print("Document data: \(favouriteData)")
+                print("Favourite data: \(favouriteData)")
             } else {
                 print("Document does not exist")
             }

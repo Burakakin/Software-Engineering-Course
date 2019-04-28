@@ -65,15 +65,55 @@ class HomeFeedVC: UITableViewController {
             let tweetID = tweet.tweetID
             let userID = tweet.userID
             FetchInfo.favouriteTweet(userID: userID, tweetID: tweetID)
-            
             print("TweetID: \(tweetID)\nUserID: \(userID)")
         }
         
+        cell.indexForRetweet = { index in
+            let tweetID = tweet.tweetID
+            let userID = tweet.userID
+            
+            let alert = UIAlertController(title: "Confirm", message: "Would you like the Retweet ", preferredStyle: UIAlertController.Style.alert)
+           
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { _ in
+                if cell.retweetButton.isSelected == true {
+                    cell.retweetButton.isSelected = true
+                } else {
+                    cell.retweetButton.isSelected = false
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertAction.Style.destructive, handler: {(_: UIAlertAction!) in
+                if cell.retweetButton.isSelected == true {
+                    cell.retweetButton.isSelected = false
+                } else {
+                    cell.retweetButton.isSelected = true
+                }
+                FetchInfo.retweetTweet(userID: userID, tweetID: tweetID)
+                
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+            print("TweetID: \(tweetID)\nUserID: \(userID)")
+            
+        }
        
         
         return cell
     }
 
+//    func showAlertWithDistructiveButton(title: String) {
+//        let alert = UIAlertController(title: "Confirm", message: "Confirm the \(title)", preferredStyle: UIAlertController.Style.alert)
+//
+//        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { _ in
+//            //Cancel Action
+//        }))
+//        alert.addAction(UIAlertAction(title: "Confirm",
+//                                      style: UIAlertAction.Style.destructive,
+//                                      handler: {(_: UIAlertAction!) in
+//
+//        }))
+//        self.present(alert, animated: true, completion: nil)
+//    }
 }
 
 

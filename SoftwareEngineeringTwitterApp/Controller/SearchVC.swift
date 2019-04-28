@@ -50,6 +50,7 @@ class SearchVC: UITableViewController {
                 }
                 else {
                     if let userTweet = userTweet {
+                        
                         FetchInfo.addFriend(userID: userID, UserTweets: userTweet)
                         print(userTweet["tweetID"]!)
                     }
@@ -64,3 +65,25 @@ class SearchVC: UITableViewController {
     
 
 }
+
+
+//let alert = UIAlertController(title: "Confirm", message: "Would you like follow the Friend ", preferredStyle: UIAlertController.Style.alert)
+//
+//alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { _ in
+//    if cell.followFriend.isSelected == true {
+//        cell.followFriend.isSelected = true
+//    } else {
+//        cell.followFriend.isSelected = false
+//    }
+//}))
+//alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertAction.Style.destructive, handler: {(_: UIAlertAction!) in
+//    if cell.followFriend.isSelected == true {
+//        cell.followFriend.isSelected = false
+//    } else {
+//        cell.followFriend.isSelected = true
+//    }
+//
+//
+//
+//}))
+//self.present(alert, animated: true, completion: nil)

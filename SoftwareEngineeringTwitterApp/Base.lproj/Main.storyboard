@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nzv-PU-a7t">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,19 +15,19 @@
             <objects>
                 <tableViewController storyboardIdentifier="HomeFeedVC" id="gFh-0h-c56" customClass="HomeFeedVC" customModule="SoftwareEngineeringTwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ADe-KR-ZFd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="120" id="a2v-c1-e2N" customClass="HomeFeedTableViewCell" customModule="SoftwareEngineeringTwitterApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a2v-c1-e2N" id="t7c-aD-dCu">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AWS-NA-wUG">
-                                            <rect key="frame" x="10" y="5" width="349" height="75"/>
+                                            <rect key="frame" x="10" y="5" width="294" height="75"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gAK-ye-bLY">
                                                     <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
@@ -36,22 +36,22 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4CU-fx-W9R">
-                                                    <rect key="frame" x="83" y="0.0" width="266" height="75"/>
+                                                    <rect key="frame" x="83" y="0.0" width="211" height="75"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvA-ve-yfa">
-                                                            <rect key="frame" x="0.0" y="0.0" width="266" height="22"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="211" height="22"/>
                                                             <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nm-yk-hgY">
-                                                            <rect key="frame" x="0.0" y="24" width="266" height="29"/>
+                                                            <rect key="frame" x="0.0" y="24" width="211" height="29"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqr-H5-4u5">
-                                                            <rect key="frame" x="0.0" y="55" width="266" height="20"/>
+                                                            <rect key="frame" x="0.0" y="55" width="211" height="20"/>
                                                             <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -60,19 +60,20 @@
                                                 </stackView>
                                             </subviews>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="k2v-IQ-pMz">
-                                            <rect key="frame" x="16" y="80" width="343" height="39.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="k2v-IQ-pMz">
+                                            <rect key="frame" x="16" y="80" width="288" height="39.5"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igt-e1-r2I">
-                                                    <rect key="frame" x="0.0" y="0.0" width="283.5" height="39.5"/>
-                                                    <state key="normal" title="Button"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igt-e1-r2I">
+                                                    <rect key="frame" x="0.0" y="0.0" width="129" height="39.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <state key="normal" image="retweet"/>
+                                                    <connections>
+                                                        <action selector="retweetButton:" destination="a2v-c1-e2N" eventType="touchUpInside" id="mH8-uZ-TXl"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woA-JP-vYf">
-                                                    <rect key="frame" x="303.5" y="0.0" width="39.5" height="39.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="39.5" id="rQA-xd-8tw"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
+                                                    <rect key="frame" x="159" y="0.0" width="129" height="39.5"/>
+                                                    <state key="normal" image="favourite-star"/>
                                                     <connections>
                                                         <action selector="favouriteButton:" destination="a2v-c1-e2N" eventType="touchUpInside" id="uuN-vN-JSl"/>
                                                     </connections>
@@ -95,6 +96,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="favouriteButton" destination="woA-JP-vYf" id="yT5-XT-h01"/>
+                                    <outlet property="retweetButton" destination="igt-e1-r2I" id="YUF-lU-ORF"/>
                                     <outlet property="timeLabel" destination="tqr-H5-4u5" id="zad-aF-pKo"/>
                                     <outlet property="tweetLabel" destination="8nm-yk-hgY" id="POo-ng-ZCW"/>
                                     <outlet property="userNameLabel" destination="cvA-ve-yfa" id="Fzu-Ay-lN9"/>
@@ -117,19 +119,19 @@
             <objects>
                 <tableViewController storyboardIdentifier="SearchVC" id="0eV-68-15K" customClass="SearchVC" customModule="SoftwareEngineeringTwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="u6h-Df-iAs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="60" id="w7s-Gb-fxT" customClass="SearchTableViewCell" customModule="SoftwareEngineeringTwitterApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w7s-Gb-fxT" id="QiV-AQ-ApM">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="k97-90-qpx">
-                                            <rect key="frame" x="10" y="4" width="355" height="51.5"/>
+                                            <rect key="frame" x="10" y="4" width="300" height="51.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="edD-lv-oEB">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="51.5"/>
@@ -143,16 +145,16 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2MG-K7-s2P">
-                                                    <rect key="frame" x="60" y="0.0" width="295" height="51.5"/>
+                                                    <rect key="frame" x="60" y="0.0" width="240" height="51.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTs-Mw-fuj">
-                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="51.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="112.5" height="51.5"/>
                                                             <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzF-LC-YY5">
-                                                            <rect key="frame" x="155" y="0.0" width="140" height="51.5"/>
+                                                            <rect key="frame" x="127.5" y="0.0" width="112.5" height="51.5"/>
                                                             <state key="normal" title="Follow +"/>
                                                             <connections>
                                                                 <action selector="FollowFriend:" destination="w7s-Gb-fxT" eventType="touchUpInside" id="wMx-9P-fOG"/>
@@ -176,6 +178,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="followFriend" destination="PzF-LC-YY5" id="Qxy-aT-TeY"/>
                                     <outlet property="userNameLabel" destination="dTs-Mw-fuj" id="zov-ww-dOq"/>
                                     <outlet property="userProfileImageView" destination="8Al-AZ-AXC" id="jMM-dK-W6c"/>
                                 </connections>
@@ -196,21 +199,21 @@
             <objects>
                 <viewController storyboardIdentifier="PushTweetVC" id="ezb-b7-BIN" customClass="PushTweetVC" customModule="SoftwareEngineeringTwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DpI-ID-uwj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSi-9x-00H">
-                                <rect key="frame" x="74" y="246" width="240" height="175"/>
+                                <rect key="frame" x="74" y="150" width="185" height="172"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type Here" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmU-Pe-zmx">
-                                        <rect key="frame" x="10" y="10" width="220" height="115"/>
+                                        <rect key="frame" x="10" y="10" width="165" height="112"/>
                                         <color key="backgroundColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJt-PV-d5n">
-                                        <rect key="frame" x="0.0" y="125" width="240" height="50"/>
+                                        <rect key="frame" x="0.0" y="122" width="185" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="IKI-KZ-WH0"/>
                                         </constraints>
@@ -237,7 +240,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="VSi-9x-00H" firstAttribute="top" secondItem="DpI-ID-uwj" secondAttribute="top" constant="246" id="62w-0g-beo"/>
+                            <constraint firstItem="VSi-9x-00H" firstAttribute="top" secondItem="DpI-ID-uwj" secondAttribute="top" constant="150" id="62w-0g-beo"/>
                             <constraint firstItem="mW0-3Z-DsG" firstAttribute="bottom" secondItem="VSi-9x-00H" secondAttribute="bottom" constant="246" id="dxV-jq-5KC"/>
                             <constraint firstItem="mW0-3Z-DsG" firstAttribute="trailing" secondItem="VSi-9x-00H" secondAttribute="trailing" constant="61" id="f6z-mS-CuB"/>
                             <constraint firstItem="VSi-9x-00H" firstAttribute="leading" secondItem="mW0-3Z-DsG" secondAttribute="leading" constant="74" id="fhr-Qk-Rhn"/>
@@ -257,14 +260,14 @@
             <objects>
                 <viewController storyboardIdentifier="SignupVC" id="Nzv-PU-a7t" customClass="SignupVC" customModule="SoftwareEngineeringTwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3S7-4F-sR4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="THF-35-H4Q">
-                                <rect key="frame" x="16" y="257" width="343" height="160"/>
+                                <rect key="frame" x="16" y="257" width="288" height="160"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WbA-1R-sNY">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ISE-db-v8d"/>
                                         </constraints>
@@ -273,13 +276,13 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCF-im-41d">
-                                        <rect key="frame" x="0.0" y="55" width="343" height="50"/>
+                                        <rect key="frame" x="0.0" y="55" width="288" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IWc-kN-9SY">
-                                        <rect key="frame" x="0.0" y="110" width="343" height="50"/>
+                                        <rect key="frame" x="0.0" y="110" width="288" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -290,13 +293,13 @@
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="NbI-4k-WFK">
-                                <rect key="frame" x="112" y="57" width="150" height="150"/>
+                                <rect key="frame" x="112" y="57" width="95" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="IRP-Hr-84P"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goZ-Xx-m1N">
-                                <rect key="frame" x="90" y="437" width="194" height="45"/>
+                                <rect key="frame" x="90" y="437" width="139" height="45"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="0.71548068523406982" green="0.090701095759868622" blue="0.10778369754552841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -306,7 +309,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fB-hz-dPN">
-                                <rect key="frame" x="150" y="609" width="74" height="38"/>
+                                <rect key="frame" x="150" y="510" width="19" height="38"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -349,20 +352,20 @@
             <objects>
                 <viewController storyboardIdentifier="SigninVC" id="wdK-u8-SY0" customClass="SigninVC" customModule="SoftwareEngineeringTwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kzp-7P-Uij">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ltV-Tu-Pmz">
-                                <rect key="frame" x="16" y="70" width="343" height="110"/>
+                                <rect key="frame" x="16" y="70" width="288" height="110"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lNA-7c-IW2">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lvn-km-S8x">
-                                        <rect key="frame" x="0.0" y="60" width="343" height="50"/>
+                                        <rect key="frame" x="0.0" y="60" width="288" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="j5H-gA-q8P"/>
                                         </constraints>
@@ -373,7 +376,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEu-s5-by8">
-                                <rect key="frame" x="90" y="228" width="194" height="45"/>
+                                <rect key="frame" x="90" y="228" width="139" height="45"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="0.71548068523406982" green="0.090701095759868622" blue="0.10778369754552841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -383,7 +386,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5V-lr-muC">
-                                <rect key="frame" x="109" y="609" width="157" height="38"/>
+                                <rect key="frame" x="109" y="510" width="102" height="38"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -421,7 +424,7 @@
             <objects>
                 <viewController storyboardIdentifier="ProfileVC" id="P8E-Cd-4j9" customClass="ProfileVC" customModule="SoftwareEngineeringTwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cm9-Wp-kBe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="er4-Cv-tKH"/>
@@ -434,5 +437,7 @@
     </scenes>
     <resources>
         <image name="emptyProfileImage" width="400" height="400"/>
+        <image name="favourite-star" width="64" height="64"/>
+        <image name="retweet" width="50" height="50"/>
     </resources>
 </document>

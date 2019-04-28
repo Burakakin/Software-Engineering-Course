@@ -15,7 +15,9 @@ class HomeFeedTableViewCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userProfileImageView: UIImageView!
     @IBOutlet weak var favouriteButton: UIButton!
+    @IBOutlet weak var retweetButton: UIButton!
     var indexForSelectedCell: ((Int) -> Void)?
+    var indexForRetweet: ((Int) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,13 +32,18 @@ class HomeFeedTableViewCell: UITableViewCell {
     
     func configureCell(tweet: Tweet) {
         
+        self.favouriteButton.setImage(UIImage(named:"favourite-star-filled")?.withRenderingMode(.alwaysOriginal), for: .selected)
+        self.favouriteButton.setImage(UIImage(named:"favourite-star")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        self.retweetButton.setImage(UIImage(named:"retweet-filled")?.withRenderingMode(.alwaysOriginal), for: .selected)
+        self.retweetButton.setImage(UIImage(named:"retweet")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        
         tweetLabel.text = tweet.tweet
         timeLabel.text = "\(tweet.dateTweet.dateValue())"
         let userID = tweet.userID
         let tweetID = tweet.tweetID
         FetchInfo.fetchUserInfo(userID: "\(userID)", completion: { user in
             if let user = user {
-                print("Configure Cell -> \(user)")
+                //print("Configure Cell -> \(user)")
                 self.userNameLabel.text = user["nameSurname"] as? String
                 imageDownload.getImage(withUrl: "\(user["profileImageUrl"] ?? "")", completion: { (image) in
                     self.userProfileImageView.image = image
@@ -56,9 +63,18 @@ class HomeFeedTableViewCell: UITableViewCell {
             }
         }
        
-        self.favouriteButton.setImage(UIImage(named:"favourite-star-filled")?.withRenderingMode(.alwaysOriginal), for: .selected)
-        self.favouriteButton.setImage(UIImage(named:"favourite-star")?.withRenderingMode(.alwaysOriginal), for: .normal)
-       
+    
+    }
+    @IBAction func retweetButton(_ sender: UIButton) {
+        let index = indexPath.flatMap { $0.row }
+        self.indexForRetweet?(index!)
+        
+        
+//        if retweetButton.isSelected == true {
+//            retweetButton.isSelected = false
+//        } else {
+//            retweetButton.isSelected = true
+//        }
     }
     
     @IBAction func favouriteButton(_ sender: UIButton) {
