@@ -89,6 +89,18 @@ class HomeFeedTableViewCell: UITableViewCell {
                 self.favouriteButton.isSelected = false
             }
         }
+        
+        FetchInfo.checkRetweet(tweetID: tweetID) { retweets in
+            guard let retweets = retweets else { return }
+            if (retweets["tweetID"] as! String) == "\(tweetID)" {
+                self.retweetButton.isSelected = true
+                self.retweetLabel.isHidden = false
+                self.retweetLabel.text = "Retweed"
+            }
+            else {
+                self.retweetButton.isSelected = false
+            }
+        }
        
     
     }

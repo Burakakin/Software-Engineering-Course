@@ -149,21 +149,32 @@ class FetchInfo {
     static func retweetTweet(userID: String, tweetID: String) {
         var ref: CollectionReference? = nil
         ref = Firestore.firestore().collection("User").document(User.currentUserID).collection("Retweet")
-        
-        ref?.document(tweetID).getDocument { (document, error) in
+        var e = 0
+
+        ref!.document(tweetID).getDocument { (document, error) in
             if let document = document, document.exists {
-                ref?.document(tweetID).delete() { err in
-                    if let err = err {
-                        print("Error removing document: \(err)")
-                    } else {
-                        print("Document successfully removed!")
-                    }
-                }
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+                e = 0
             } else {
-                print("Favourite Document was added")
-                ref?.document(tweetID).setData(["tweetID": tweetID, "userID": userID])
+                print("Document does not exist")
+                e = 1
             }
         }
+        if e == 0 {
+            ref!.document(tweetID).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
+        }
+        
+             
+        
+        
+       
         
     }
     
@@ -192,6 +203,23 @@ class FetchInfo {
         var ref: CollectionReference? = nil
         //ref = Firestore.firestore().collection("Tweet")
         ref = Firestore.firestore().collection("User").document(User.currentUserID).collection("Favourite")
+        
+        ref?.document(tweetID).getDocument { (document, error) in
+            if let document = document, document.exists {
+                let favouriteData = document.data()!
+                completion(favouriteData)
+                print("Favourite data: \(favouriteData)")
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
+    
+    static func checkRetweet(tweetID: String, completion: @escaping ([String: Any]?) -> ()) {
+        
+        var ref: CollectionReference? = nil
+        //ref = Firestore.firestore().collection("Tweet")
+        ref = Firestore.firestore().collection("User").document(User.currentUserID).collection("Retweet")
         
         ref?.document(tweetID).getDocument { (document, error) in
             if let document = document, document.exists {

@@ -94,7 +94,9 @@ class HomeFeedVC: UITableViewController {
             let tweetID = self.tweets[index].tweetID
             let userID = self.tweets[index].userID
             let tweetNew = self.tweets[index].tweet
-            
+            let tweetIDNew = "burak" + tweetID
+            let first4IDNew = String(tweetIDNew.prefix(4))
+            let first4ID = String(tweetID.prefix(4))
             
             let alert = UIAlertController(title: "Confirm", message: "Would you like the Retweet ", preferredStyle: UIAlertController.Style.alert)
            
@@ -106,14 +108,53 @@ class HomeFeedVC: UITableViewController {
                 }
             }))
             alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertAction.Style.destructive, handler: {(_: UIAlertAction!) in
-                if cell.retweetButton.isSelected == true {
-                    cell.retweetButton.isSelected = false
-                } else {
-                    cell.retweetButton.isSelected = true
+                var ref: CollectionReference? = nil
+               
+                if first4IDNew == first4ID {
+                    print("You already Retweed ")
+                    ref = Firestore.firestore().collection("Tweet").document(User.currentUserID).collection("UserTweet")
+                    ref!.document(tweetID).delete() { err in
+                        if let err = err {
+                            print("Error removing document: \(err)")
+                        } else {
+                            print("Document successfully removed!")
+                        }
+                    }
+                    ref = Firestore.firestore().collection("Tweet").document(User.currentUserID).collection("TweetPool")
+                    ref!.document(tweetID).delete() { err in
+                        if let err = err {
+                            print("Error removing document: \(err)")
+                        } else {
+                            print("Document successfully removed!")
+                        }
+                    }
+                    ref = Firestore.firestore().collection("User").document(User.currentUserID).collection("Retweet")
+                    ref!.document(tweetID).delete() { err in
+                        if let err = err {
+                            print("Error removing document: \(err)")
+                        } else {
+                            print("Document successfully removed!")
+                        }
+                    }
                 }
-                FetchInfo.retweetTweet(userID: userID, tweetID: tweetID)
-                let retweetTweet = Tweet(tweet: tweetNew, dateTweet: Timestamp(), userID: userID, tweetID: tweetID)
-//                FetchInfo.pushTweet(tweet: retweetTweet, tweetID: tweetID)
+                else {
+                    if cell.retweetButton.isSelected == true {
+                        cell.retweetButton.isSelected = false
+                    } else {
+                        cell.retweetButton.isSelected = true
+                    }
+                    
+                    let retweetTweet = Tweet(tweet: tweetNew, dateTweet: Timestamp(), userID: userID, tweetID: tweetIDNew)
+                    ref = Firestore.firestore().collection("User").document(User.currentUserID).collection("Retweet")
+                    ref?.document(tweetIDNew).setData(retweetTweet.dictionary)
+                    ref = Firestore.firestore().collection("Tweet").document(User.currentUserID).collection("UserTweet")
+                    ref!.document(tweetIDNew).setData(retweetTweet.dictionary)
+                    ref = Firestore.firestore().collection("Tweet").document(User.currentUserID).collection("TweetPool")
+                    ref!.document(tweetIDNew).setData(retweetTweet.dictionary)
+                }
+               
+               
+                
                 
             }))
             self.present(alert, animated: true, completion: nil)

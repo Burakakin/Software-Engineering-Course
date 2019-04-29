@@ -109,8 +109,8 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 } else {
                     cell.retweetButton.isSelected = true
                 }
-                FetchInfo.retweetTweet(userID: userID, tweetID: tweetID)
-                let retweetTweet = Tweet(tweet: tweetNew, dateTweet: Timestamp(), userID: userID, tweetID: tweetID)
+//                FetchInfo.retweetTweet(userID: userID, tweetID: tweetID)
+//                let retweetTweet = Tweet(tweet: tweetNew, dateTweet: Timestamp(), userID: userID, tweetID: tweetID)
                 //                FetchInfo.pushTweet(tweet: retweetTweet, tweetID: tweetID)
                 
             }))
