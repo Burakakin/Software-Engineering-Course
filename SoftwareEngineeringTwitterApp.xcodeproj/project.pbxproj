@@ -16,6 +16,7 @@
 		A874DF5E2225B2EA00B77FCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A874DF5D2225B2EA00B77FCB /* GoogleService-Info.plist */; };
 		A8A6ED1A2253D43800588914 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6ED192253D43800588914 /* SearchTableViewCell.swift */; };
 		A8B71C7C226E8E3700104DAF /* PushTweetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B71C7B226E8E3700104DAF /* PushTweetVC.swift */; };
+		A8FC161E22765EB2004B1ED6 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FC161D22765EB2004B1ED6 /* ProfileTableViewCell.swift */; };
 		A8FD8E0C2224901C00C7F62C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FD8E0B2224901C00C7F62C /* AppDelegate.swift */; };
 		A8FD8E112224901C00C7F62C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FD8E0F2224901C00C7F62C /* Main.storyboard */; };
 		A8FD8E132224901E00C7F62C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8FD8E122224901E00C7F62C /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		A874DF5D2225B2EA00B77FCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A8A6ED192253D43800588914 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		A8B71C7B226E8E3700104DAF /* PushTweetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTweetVC.swift; sourceTree = "<group>"; };
+		A8FC161D22765EB2004B1ED6 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		A8FD8E082224901C00C7F62C /* SoftwareEngineeringTwitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoftwareEngineeringTwitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8FD8E0B2224901C00C7F62C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8FD8E102224901C00C7F62C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				A8089B0E2231EEBB0069256F /* HomeFeedTableViewCell.swift */,
 				A8A6ED192253D43800588914 /* SearchTableViewCell.swift */,
+				A8FC161D22765EB2004B1ED6 /* ProfileTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8089B0F2231EEBB0069256F /* HomeFeedTableViewCell.swift in Sources */,
+				A8FC161E22765EB2004B1ED6 /* ProfileTableViewCell.swift in Sources */,
 				A8546013222596980019B11F /* SignupVC.swift in Sources */,
 				A8FD8E3522249B2D00C7F62C /* ProfileVC.swift in Sources */,
 				A8FD8E3322249B1C00C7F62C /* SearchVC.swift in Sources */,

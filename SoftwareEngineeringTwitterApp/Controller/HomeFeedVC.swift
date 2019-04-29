@@ -11,7 +11,8 @@ import Firebase
 
 class HomeFeedVC: UITableViewController {
     var tweets = [Tweet]()
-    
+    var refresh = UIRefreshControl()
+    @IBOutlet var homeFeedTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,7 +20,8 @@ class HomeFeedVC: UITableViewController {
         let settings = db.settings
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
-       
+        homeFeedTableView.refreshControl = refresh
+        refresh.addTarget(self, action: #selector(refreshHomeFeed), for: .valueChanged)
         FetchInfo.fetchHomeFeed(userID: User.currentUserID, subCollection: "TweetPool") { (homeFeed) in
             if let homeFeed = homeFeed {
                 //print(homeFeed)
@@ -36,6 +38,26 @@ class HomeFeedVC: UITableViewController {
        
     }
     
+    
+    @objc func refreshHomeFeed (sender: AnyObject) {
+       
+        tweets.removeAll()
+        tableView.reloadData()
+        FetchInfo.fetchHomeFeed(userID: User.currentUserID, subCollection: "TweetPool") { (homeFeed) in
+            if let homeFeed = homeFeed {
+                //print(homeFeed)
+                let timestamp: Timestamp = homeFeed["dateTweet"] as! Timestamp
+                let newTweet = Tweet(tweet: homeFeed["tweet"] as! String, dateTweet: timestamp, userID: homeFeed["userID"] as! String, tweetID: homeFeed["tweetID"] as! String)
+                DispatchQueue.main.async {
+                    self.tweets.append(newTweet)
+                    self.tableView.reloadData()
+                     self.refresh.endRefreshing()
+                }
+            }
+            
+        }
+       
+    }
 
     
     @objc func addTweet() {
@@ -69,8 +91,10 @@ class HomeFeedVC: UITableViewController {
         }
         
         cell.indexForRetweet = { index in
-            let tweetID = tweet.tweetID
-            let userID = tweet.userID
+            let tweetID = self.tweets[index].tweetID
+            let userID = self.tweets[index].userID
+            let tweetNew = self.tweets[index].tweet
+            
             
             let alert = UIAlertController(title: "Confirm", message: "Would you like the Retweet ", preferredStyle: UIAlertController.Style.alert)
            
@@ -88,7 +112,8 @@ class HomeFeedVC: UITableViewController {
                     cell.retweetButton.isSelected = true
                 }
                 FetchInfo.retweetTweet(userID: userID, tweetID: tweetID)
-                
+                let retweetTweet = Tweet(tweet: tweetNew, dateTweet: Timestamp(), userID: userID, tweetID: tweetID)
+//                FetchInfo.pushTweet(tweet: retweetTweet, tweetID: tweetID)
                 
             }))
             self.present(alert, animated: true, completion: nil)

@@ -1,24 +1,24 @@
 //
-//  HomeFeedTableViewCell.swift
+//  ProfileTableViewCell.swift
 //  SoftwareEngineeringTwitterApp
 //
-//  Created by Burak Akin on 8.03.2019.
+//  Created by Burak Akin on 29.04.2019.
 //  Copyright © 2019 Burak Akin. All rights reserved.
 //
 
 import UIKit
 
-class HomeFeedTableViewCell: UITableViewCell {
+class ProfileTableViewCell: UITableViewCell {
+
     
-    @IBOutlet weak var tweetLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var userProfileImageView: UIImageView!
-    @IBOutlet weak var favouriteButton: UIButton!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileNameLabel: UILabel!
+    @IBOutlet weak var profileTweetLabel: UILabel!
+    @IBOutlet weak var profileDateLabel: UILabel!
     @IBOutlet weak var retweetButton: UIButton!
+    @IBOutlet weak var favouriteButton: UIButton!
     var indexForSelectedCell: ((Int) -> Void)?
     var indexForRetweet: ((Int) -> Void)?
-    @IBOutlet weak var retweetLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,51 +31,33 @@ class HomeFeedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBOutlet weak var ContainerView: UIView!{
-        didSet {
-            ContainerView.backgroundColor = UIColor.clear
-            ContainerView.layer.shadowOpacity = 0.7
-            ContainerView.layer.shadowRadius = 2
-            ContainerView.layer.shadowColor = UIColor.gray.cgColor
-            ContainerView.layer.shadowOffset = CGSize(width: 3, height: 3)
-        }
-    }
-    
-    @IBOutlet weak var clippingView: UIView!{
-        didSet {
-            clippingView.layer.cornerRadius = 10
-            clippingView.backgroundColor = UIColor.white
-            clippingView.layer.masksToBounds = true
-        }
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        self.userProfileImageView.image = nil // or set a placeholder image
+        self.profileImageView.image = nil // or set a placeholder image
         self.favouriteButton.isSelected = false
         self.retweetButton.isSelected = false
     }
     
-    func configureCell(tweet: Tweet) {
+    func configureTweet(tweet: Tweet) {
         
         self.favouriteButton.setImage(UIImage(named:"favourite-star-filled")?.withRenderingMode(.alwaysOriginal), for: .selected)
         self.favouriteButton.setImage(UIImage(named:"favourite-star")?.withRenderingMode(.alwaysOriginal), for: .normal)
         self.retweetButton.setImage(UIImage(named:"retweet-filled")?.withRenderingMode(.alwaysOriginal), for: .selected)
         self.retweetButton.setImage(UIImage(named:"retweet")?.withRenderingMode(.alwaysOriginal), for: .normal)
         
-        tweetLabel.text = tweet.tweet
-        timeLabel.text = "\(tweet.dateTweet.dateValue())"
+        profileTweetLabel.text = tweet.tweet
+        profileDateLabel.text = "\(tweet.dateTweet.dateValue())"
         let userID = tweet.userID
         let tweetID = tweet.tweetID
         FetchInfo.fetchUserInfo(userID: "\(userID)", completion: { user in
             if let user = user {
                 //print("Configure Cell -> \(user)")
-                self.userNameLabel.text = user["nameSurname"] as? String
+                self.profileNameLabel.text = user["nameSurname"] as? String
                 imageDownload.getImage(withUrl: "\(user["profileImageUrl"] ?? "")", completion: { (image) in
-                    self.userProfileImageView.image = image
-                    self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.frame.size.width / 2
-                    self.userProfileImageView.clipsToBounds = true
+                    self.profileImageView.image = image
+                    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2
+                    self.profileImageView.clipsToBounds = true
                 })
             }
         })
@@ -89,21 +71,14 @@ class HomeFeedTableViewCell: UITableViewCell {
                 self.favouriteButton.isSelected = false
             }
         }
-       
-    
+        
+        
     }
+    
     @IBAction func retweetButton(_ sender: UIButton) {
         let index = indexPath.flatMap { $0.row }
         self.indexForRetweet?(index!)
-        
-        
-//        if retweetButton.isSelected == true {
-//            retweetButton.isSelected = false
-//        } else {
-//            retweetButton.isSelected = true
-//        }
     }
-    
     @IBAction func favouriteButton(_ sender: UIButton) {
         let index = indexPath.flatMap { $0.row }
         self.indexForSelectedCell?(index!)
